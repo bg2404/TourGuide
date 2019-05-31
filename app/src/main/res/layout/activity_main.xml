@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7DA"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/history_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DC143C"
+        android:padding="16dp"
+        android:text="@string/back_to_history"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="casual" />
+
+    <TextView
+        android:id="@+id/activities_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FD8E09"
+        android:padding="16dp"
+        android:text="@string/cool_activities"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="casual" />
+
+    <TextView
+        android:id="@+id/food_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#379237"
+        android:padding="16dp"
+        android:text="@string/khaana_khazaana"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="casual" />
+
+    <TextView
+        android:id="@+id/hotels_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8800A0"
+        android:padding="16dp"
+        android:text="@string/hotels"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="casual" />
+
+    <TextView
+        android:id="@+id/shopping_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#16AFCA"
+        android:padding="16dp"
+        android:text="@string/shopping"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="casual" />
+</LinearLayout>

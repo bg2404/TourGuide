@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tour Guide</string>
+    <string name="back_to_history">Back to History</string>
+    <string name="cool_activities">Cool Activities</string>
+    <string name="khaana_khazaana">Khaana Khazaana</string>
+    <string name="hotels">Hotels</string>
+    <string name="shopping">Shopping</string>
+</resources>
