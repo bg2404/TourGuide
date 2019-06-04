@@ -5,4 +5,5 @@
     <string name="khaana_khazaana">Khaana Khazaana</string>
     <string name="hotels">Hotels</string>
     <string name="shopping">Shopping</string>
+    <string name="location_image_content_description">Location Image</string>
 </resources>
