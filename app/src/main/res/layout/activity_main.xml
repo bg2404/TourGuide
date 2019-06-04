@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_history"
-        android:padding="16dp"
+        android:padding="@dimen/padding_large"
         android:text="@string/back_to_history"
         android:textAllCaps="true"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
         app:fontFamily="casual" />
 
@@ -23,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_activities"
-        android:padding="16dp"
+        android:padding="@dimen/padding_large"
         android:text="@string/cool_activities"
         android:textAllCaps="true"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
         app:fontFamily="casual" />
 
@@ -35,10 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_food"
-        android:padding="16dp"
+        android:padding="@dimen/padding_large"
         android:text="@string/khaana_khazaana"
         android:textAllCaps="true"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
         app:fontFamily="casual" />
 
@@ -47,10 +47,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_hotels"
-        android:padding="16dp"
+        android:padding="@dimen/padding_large"
         android:text="@string/hotels"
         android:textAllCaps="true"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
         app:fontFamily="casual" />
 
@@ -59,10 +59,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#16AFCA"
-        android:padding="16dp"
+        android:padding="@dimen/padding_large"
         android:text="@string/shopping"
         android:textAllCaps="true"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_large"
         android:textStyle="bold"
         app:fontFamily="casual" />
 </LinearLayout>
