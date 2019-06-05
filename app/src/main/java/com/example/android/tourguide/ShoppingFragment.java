@@ -1,17 +1,31 @@
 package com.example.android.tourguide;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ShoppingActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class ShoppingFragment extends Fragment {
+
+
+    public ShoppingFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.location_list, container, false);
 
         ArrayList<Location> locations = new ArrayList<>();
         locations.add(new Location(R.drawable.shopping_ambience_mall, "Ambience Mall", "Vasant Kunj", (float) 4.6));
@@ -24,9 +38,12 @@ public class ShoppingActivity extends AppCompatActivity {
         locations.add(new Location(R.drawable.shopping_unity_one_mall, "Unity One Mall", "Janakpuri", (float) 4.4));
         locations.add(new Location(R.drawable.shopping_yak_carpet, "Yak Carpet", "Lajpat Nagar", (float) 4.4));
 
-        LocationAdapter locationAdapter = new LocationAdapter(this, locations);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_shopping);
 
-        ListView shoppingListView = findViewById(R.id.shopping_list_view);
+        ListView shoppingListView = rootView.findViewById(R.id.list_view);
         shoppingListView.setAdapter(locationAdapter);
+
+        return rootView;
     }
+
 }

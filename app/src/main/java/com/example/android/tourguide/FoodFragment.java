@@ -1,19 +1,33 @@
 package com.example.android.tourguide;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FoodActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class FoodFragment extends Fragment {
+
+
+    public FoodFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.location_list, container, false);
 
-        ArrayList<Location> locations = new ArrayList<>();
+        final ArrayList<Location> locations = new ArrayList<>();
         locations.add(new Location(R.drawable.food_annamaya, "Annamaya", "Aerocity", (float) 4.3));
         locations.add(new Location(R.drawable.food_grappa_shangri_las_eros_hotel, "Grappa, Shangri la's Eros Hotel", "Cannaught Place", (float) 4.4));
         locations.add(new Location(R.drawable.food_ikk_punjab, "Ikk Punjab", "Rajouri Garden", (float) 4.1));
@@ -26,9 +40,12 @@ public class FoodActivity extends AppCompatActivity {
         locations.add(new Location(R.drawable.food_thyme, "Thyme", "Pushpanjali Farms", (float) 4.4));
         locations.add(new Location(R.drawable.food_united_coffee_house, "United Coffee House", "Cannaught Place", (float) 4.3));
 
-        LocationAdapter locationAdapter = new LocationAdapter(this, locations);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_food);
 
-        ListView foodListView = findViewById(R.id.food_list_view);
+        ListView foodListView = rootView.findViewById(R.id.list_view);
         foodListView.setAdapter(locationAdapter);
+
+        return rootView;
     }
+
 }

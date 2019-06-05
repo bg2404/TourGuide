@@ -5,4 +5,7 @@
     <string name="hotels">Hotels</string>
     <string name="shopping">Shopping</string>
     <string name="location_image_content_description">Location Image</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

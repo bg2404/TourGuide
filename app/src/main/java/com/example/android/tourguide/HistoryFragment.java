@@ -1,18 +1,31 @@
 package com.example.android.tourguide;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class HistoryActivity extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class HistoryFragment extends Fragment {
+
+
+    public HistoryFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.location_list, container, false);
         ArrayList<Location> locations = new ArrayList<>();
         locations.add(new Location(R.drawable.history_gurudwara_bangla_sahib, "Gurudwara Bangla Sahib", "Cannaught Place", (float) 4.8));
         locations.add(new Location(R.drawable.history_humayun_s_tomb, "Humayun's Tomb", "Nizamuddin", (float) 4.5));
@@ -24,9 +37,11 @@ public class HistoryActivity extends AppCompatActivity {
         locations.add(new Location(R.drawable.history_red_fort, "Red Fort", "Chandni Chowk", (float) 4.4));
         locations.add(new Location(R.drawable.history_swaminarayan_akshardham, "Swaminarayan Akshardham", "Pandav Nagar", (float) 4.6));
 
-        LocationAdapter locationAdapter = new LocationAdapter(this, locations);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_history);
 
-        ListView historyListView = findViewById(R.id.history_list_view);
-        historyListView.setAdapter(locationAdapter);
+        ListView listView = rootView.findViewById(R.id.list_view);
+        listView.setAdapter(locationAdapter);
+        return rootView;
     }
+
 }
