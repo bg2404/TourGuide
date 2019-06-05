@@ -19,18 +19,6 @@
         app:fontFamily="casual" />
 
     <TextView
-        android:id="@+id/activities_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_activities"
-        android:padding="@dimen/padding_large"
-        android:text="@string/cool_activities"
-        android:textAllCaps="true"
-        android:textSize="@dimen/text_size_large"
-        android:textStyle="bold"
-        app:fontFamily="casual" />
-
-    <TextView
         android:id="@+id/food_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

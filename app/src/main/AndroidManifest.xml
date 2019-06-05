@@ -12,7 +12,6 @@
         <activity android:name=".ShoppingActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".HotelsActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".FoodActivity" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ActivitiesActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".HistoryActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>

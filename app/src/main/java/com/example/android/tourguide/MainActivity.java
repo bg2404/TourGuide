@@ -22,15 +22,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView activitiesTextView = findViewById(R.id.activities_text_view);
-        activitiesTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivitiesActivity.class);
-                startActivity(intent);
-            }
-        });
-
         TextView foodTextView = findViewById(R.id.food_text_view);
         foodTextView.setOnClickListener(new View.OnClickListener() {
             @Override
