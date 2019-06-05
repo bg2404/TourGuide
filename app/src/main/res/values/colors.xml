@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#4A312A</color>
     <color name="colorPrimaryDark">#2F1D1A</color>
+    <color name="colorAccent">#DC143C</color>
     <color name="tan_background">#FFF7DA</color>
     <color name="color_history">#DC143C</color>
     <color name="color_activities">#FD8E09</color>

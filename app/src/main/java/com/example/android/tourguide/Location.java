@@ -1,25 +1,31 @@
 package com.example.android.tourguide;
 
 public class Location {
-    private String mPlaceName;
     private int mImageResourceId;
+    private String mPlaceName;
     private String mAddress;
+    private float mRating;
 
-    public Location(String placeName, int imageResourceId, String address) {
-        mPlaceName = placeName;
+    public Location(int imageResourceId, String placeName, String address, float rating) {
         mImageResourceId = imageResourceId;
+        mPlaceName = placeName;
         mAddress = address;
-    }
-
-    public String getPlaceName() {
-        return mPlaceName;
+        mRating = rating;
     }
 
     public int getImageResourceId() {
         return mImageResourceId;
     }
 
+    public String getPlaceName() {
+        return mPlaceName;
+    }
+
     public String getAddress() {
         return mAddress;
+    }
+
+    public float getRating() {
+        return mRating;
     }
 }

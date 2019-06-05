@@ -8,28 +8,30 @@
 
     <ImageView
         android:id="@+id/location_image_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/image_side"
+        android:layout_height="@dimen/image_side"
         android:layout_alignTop="@id/location_text_container"
         android:layout_alignBottom="@id/location_text_container"
-        android:layout_marginEnd="@dimen/margin_large"
-        android:layout_marginRight="@dimen/margin_large"
-        app:layout_constraintBottom_toBottomOf="@+id/location_text_container"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/location_text_container"
+        android:contentDescription="@string/location_image_content_description"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/location_text_container"
-        tools:srcCompat="@android:color/holo_orange_light"
-        android:contentDescription="@string/location_image_content_description"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@android:color/holo_orange_light" />
 
     <LinearLayout
         android:id="@+id/location_text_container"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_toEndOf="@id/location_image_view"
         android:layout_toRightOf="@id/location_image_view"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/location_image_view"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -37,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_small"
-            android:textSize="@dimen/text_size_large"
+            android:textSize="@dimen/text_size_medium"
             tools:text="Location Name" />
 
         <TextView
@@ -45,12 +47,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_small"
-            android:textSize="@dimen/text_size_medium"
+            android:textSize="@dimen/text_size_small"
             tools:text="Address" />
 
         <RatingBar
             android:id="@+id/location_rating_bar"
-            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:isIndicator="true"
