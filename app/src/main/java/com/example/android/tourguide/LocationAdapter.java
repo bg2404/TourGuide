@@ -1,9 +1,13 @@
 package com.example.android.tourguide;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +28,7 @@ public class LocationAdapter extends ArrayAdapter<Location> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable final View convertView, @NonNull final ViewGroup parent) {
         View listItemView = convertView;
 
         if(listItemView == null)
@@ -32,14 +36,11 @@ public class LocationAdapter extends ArrayAdapter<Location> {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent,false);
         }
 
-        Location currentLocation = getItem(position);
+        final Location currentLocation = getItem(position);
 
 
         if (currentLocation != null) {
-            ImageView locationImageView = listItemView.findViewById(R.id.location_image_view);
-            locationImageView.setImageResource(currentLocation.getImageResourceId());
-
-            TextView locationNameTextVIew = listItemView.findViewById(R.id.location_name_text_view);
+            final TextView locationNameTextVIew = listItemView.findViewById(R.id.location_name_text_view);
             locationNameTextVIew.setText(currentLocation.getPlaceName());
 
             TextView locationAddressTextView = listItemView.findViewById(R.id.location_address_text_view);
@@ -47,6 +48,24 @@ public class LocationAdapter extends ArrayAdapter<Location> {
 
             RatingBar locationRatingBar = listItemView.findViewById(R.id.location_rating_bar);
             locationRatingBar.setRating(currentLocation.getRating());
+
+            ImageView locationImageView = listItemView.findViewById(R.id.location_image_view);
+            locationImageView.setImageResource(currentLocation.getImageResourceId());
+            locationImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    View layout = LayoutInflater.from(getContext()).inflate(R.layout.image_dialog, parent, false);
+                    AlertDialog.Builder imageDialog = new AlertDialog.Builder(getContext());
+
+                    ImageView dialoagImageView = layout.findViewById(R.id.dialog_image_view);
+                    dialoagImageView.setImageResource(currentLocation.getImageResourceId());
+
+                    imageDialog.setView(layout);
+                    AlertDialog alertDialog = imageDialog.create();
+                    alertDialog.show();
+
+                }
+            });
         }
 
         View locationTextContainer = listItemView.findViewById(R.id.location_text_container);
