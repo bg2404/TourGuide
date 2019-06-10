@@ -2,8 +2,10 @@ package com.example.android.tourguide;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -62,6 +64,7 @@ public class LocationAdapter extends ArrayAdapter<Location> {
 
                     imageDialog.setView(layout);
                     AlertDialog alertDialog = imageDialog.create();
+                    alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
                     alertDialog.show();
 
                 }
@@ -71,6 +74,15 @@ public class LocationAdapter extends ArrayAdapter<Location> {
         View locationTextContainer = listItemView.findViewById(R.id.location_text_container);
         View parentView = (View) locationTextContainer.getParent();
         parentView.setBackgroundColor(ContextCompat.getColor(getContext(), mColorResourceId));
+
+        locationTextContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://maps.google.co.in/maps?q=" + currentLocation.getPlaceName() + ", " + currentLocation.getAddress();
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,  Uri.parse(url));
+                getContext().startActivity(intent);
+            }
+        });
 
         return listItemView;
     }
