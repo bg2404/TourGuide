@@ -38,7 +38,7 @@ public class HotelsFragment extends Fragment {
         locations.add(new Location(R.drawable.hotels_the_leela_ambience, "The Leela Ambience", "Vishhwas Nagar", (float) 4.5));
         locations.add(new Location(R.drawable.hotels_the_radisson_blu_plaza, "The Radisson Blu Plaza", "Dwarka", (float) 4.3));
 
-        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_hotels);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations);
 
         ListView hotelsListView = rootView.findViewById(R.id.list_view);
         hotelsListView.setAdapter(locationAdapter);

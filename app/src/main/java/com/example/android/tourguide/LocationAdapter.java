@@ -21,11 +21,9 @@ import android.widget.TextView;
 import java.util.List;
 
 public class LocationAdapter extends ArrayAdapter<Location> {
-    private int mColorResourceId;
 
-    public LocationAdapter(Context context, List<Location> objects, int colorResourceId) {
+    public LocationAdapter(Context context, List<Location> objects) {
         super(context, 0, objects);
-        mColorResourceId = colorResourceId;
     }
 
     @NonNull
@@ -72,15 +70,13 @@ public class LocationAdapter extends ArrayAdapter<Location> {
         }
 
         View locationTextContainer = listItemView.findViewById(R.id.location_text_container);
-        View parentView = (View) locationTextContainer.getParent();
-        parentView.setBackgroundColor(ContextCompat.getColor(getContext(), mColorResourceId));
-
         locationTextContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String url = "http://maps.google.co.in/maps?q=" + currentLocation.getPlaceName() + ", " + currentLocation.getAddress();
                 Intent intent = new Intent(android.content.Intent.ACTION_VIEW,  Uri.parse(url));
                 getContext().startActivity(intent);
+
             }
         });
 

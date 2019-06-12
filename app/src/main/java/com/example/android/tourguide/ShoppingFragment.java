@@ -38,7 +38,7 @@ public class ShoppingFragment extends Fragment {
         locations.add(new Location(R.drawable.shopping_unity_one_mall, "Unity One Mall", "Janakpuri", (float) 4.4));
         locations.add(new Location(R.drawable.shopping_yak_carpet, "Yak Carpet", "Lajpat Nagar", (float) 4.4));
 
-        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_shopping);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations);
 
         ListView shoppingListView = rootView.findViewById(R.id.list_view);
         shoppingListView.setAdapter(locationAdapter);

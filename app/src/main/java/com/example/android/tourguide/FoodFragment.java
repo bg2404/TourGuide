@@ -40,7 +40,7 @@ public class FoodFragment extends Fragment {
         locations.add(new Location(R.drawable.food_thyme, "Thyme", "Pushpanjali Farms", (float) 4.4));
         locations.add(new Location(R.drawable.food_united_coffee_house, "United Coffee House", "Cannaught Place", (float) 4.3));
 
-        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_food);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations);
 
         ListView foodListView = rootView.findViewById(R.id.list_view);
         foodListView.setAdapter(locationAdapter);

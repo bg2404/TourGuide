@@ -44,7 +44,7 @@ public class HistoryFragment extends Fragment {
         locations.add(new Location(R.drawable.history_red_fort, "Red Fort", "Chandni Chowk", (float) 4.4));
         locations.add(new Location(R.drawable.history_swaminarayan_akshardham, "Swaminarayan Akshardham", "Pandav Nagar", (float) 4.6));
 
-        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations, R.color.color_history);
+        LocationAdapter locationAdapter = new LocationAdapter(getActivity(), locations);
 
         ListView listView = rootView.findViewById(R.id.list_view);
         listView.setAdapter(locationAdapter);
